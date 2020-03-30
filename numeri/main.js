@@ -12,12 +12,12 @@ for (var i = 0; i < 2; i++) {
   // numero di PC1
   if (i==0) {
     numPC1 = randomizzatore(min, max);
-    console.log(numPC1);
+    document.getElementById("rpc1").innerHTML = "Il numero di PC1 è " + numPC1;
   }
   // numero di PC2
   else {
     numPC2 = randomizzatore(min, max);
-    console.log(numPC2);
+    document.getElementById("rpc2").innerHTML = "Il numero di PC2 è " + numPC2;
   }
 }
 
@@ -26,4 +26,11 @@ function randomizzatore(min, max){
   return randomizzato = Math.floor(Math.random() * (max - min +1) + min);
 }
 
-// dichiarazione del vincitore e somma dei due numeri
+// somma dei due numeri e dichiarazione del vincitore
+var sommadeldestino = numPC1 + numPC2;
+document.getElementById("somma").innerHTML = "La somma dei due numeri è " + sommadeldestino;
+if (sommadeldestino % 2 === 0) {
+  document.getElementById("vincitore").innerHTML = "PC1 ha vinto la sfida";
+}else {
+  document.getElementById("vincitore").innerHTML = "PC2 ha vinto la sfida";
+}
